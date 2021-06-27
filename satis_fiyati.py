@@ -1,6 +1,8 @@
+# "Kaça satmalı"nın cevabını verir.
+
 kargo = 15
 hizmet_bedeli_yuzdesi = 0.8
-komisyon_yuzdesi = 15
+komisyon_yuzdesi = float(input("Komisyon (%): "))
 kar_yuzdesi = float(input("Kar (%): "))
 gelis = float(input("Geliş Fiyatı (TL): "))
 
