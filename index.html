@@ -9,19 +9,19 @@
 	<body>
 		<form>
 			<label for="fee">Komisyon (%):</label>
-			<input type="text" name="fee"><br>
+			<input type="number" name="fee"><br>
 			<label for="shipping">Kargo (KDV Dahil):</label>
-			<input type="text" name="shipping" value="15"><br>
+			<input type="number" name="shipping" value="15"><br>
 			<label for="cost">Geliş:</label>
-			<input type="text" name="cost">
+			<input type="number" name="cost">
 			<label for="vat">KDV (%):</label>
-			<input type="text" name="vat" value="9"><br>
+			<input type="number" name="vat" value="9"><br>
 			<label for="price">Satış:</label>
-			<input type="text" name="price"><br><br>
+			<input type="number" name="price"><br><br>
 			<label for="profit">Kar:<label>
-			<input type="text" name="profit" value="" jAutoCalc="((1-{fee}/100)*{price}-(1+{vat}/100)*{cost}-{shipping})/(1+{vat}/100)">
+			<input type="number" name="profit" value="" jAutoCalc="((1-{fee}/100)*{price}-(1+{vat}/100)*{cost}-{shipping})/(1+{vat}/100)">
 			<label for="percent">%<label>
-			<input type="text" name="percent" value="" jAutoCalc="{profit}/{price}*100">
+			<input type="number" name="percent" value="" jAutoCalc="{profit}/{price}*100">
 		</form>
 		<script>$('form').jAutoCalc({keyEventsFire:true,decimalPlaces:2,emptyAsZero:true});</script>
 	</body>
