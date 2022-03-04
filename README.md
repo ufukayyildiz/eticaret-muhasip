@@ -16,4 +16,3 @@
 - https://www.jqueryscript.net/form/Do-Calculations-Form-Fields-AutoCalc.html
 
 ### TO-DO
-- [Using node-modules in HTML](https://duckduckgo.com/?q=can+i+use+node+modules+with+html&ia=qa) 
