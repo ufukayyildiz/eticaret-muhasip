@@ -1,5 +1,5 @@
 ### Online
-- https://frknltrk.github.io/eticaret_muhasip/
+- See *About* section.
 
 ### Pazaryeri Komisyon Oranları
 - [n11](https://magazadestek.n11.com/s/komisyon-oranlari)
