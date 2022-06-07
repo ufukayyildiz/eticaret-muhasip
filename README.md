@@ -17,5 +17,6 @@
 - https://www.jqueryscript.net/form/Do-Calculations-Form-Fields-AutoCalc.html
 
 ### YAPILACAKLAR
-- kullanıcının, *komisyon* ve *kargo* ücretlerini elle girmesi yerine seçeceği pazaryerine göre **program** kendisi çekip hesaplamaya dahil etsin.
-- pazaryeri seçmek için açılır menü
+- [ ] kullanıcının, *komisyon* ve *kargo* ücretlerini elle girmesi yerine seçeceği pazar yerine göre **program** kendisi çekip hesaplamaya dahil etsin.
+- [ ] pazar yeri seçmek için açılır menü
+- [ ] mobil dostu güzel bir arayüzü
