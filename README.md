@@ -2,10 +2,10 @@
 - See *About* section.
 
 ### Pazaryeri Komisyon Oranları
+- Amazon
 - Trendyol
 - HepsiBurada
 - [n11](https://magazadestek.n11.com/s/komisyon-oranlari)
-- [GittiGidiyor](https://www.gittigidiyor.com/satici-bilgi-merkezi/ilk-defa-satis-yapmak/ucretler-ve-komisyonlar.html)
 - Çiçek Sepeti
 
 ### Anlaşmalı Kargo Ücretleri
