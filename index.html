@@ -13,54 +13,54 @@
 <body>
 	<form class="p-3 mx-auto" style="max-width: max-content">
 
-		<div>
-			<label class="form-label" for="vat">KDV: </label>
-			<div class="input-group mb-3">
+		<div class="row mb-3">
+			<label class="col col-form-label" for="vat">KDV: </label>
+			<div class="col-sm input-group">
 				<span class="input-group-text">%</span>
 				<input class="form-control" type="number" name="vat" value="12"><br>
 			</div>
 		</div>
 
-		<div>
-			<label class="form-label" for="fee">Komisyon: </label>
-			<div class="input-group mb-3">
+		<div class="row mb-3">
+			<label class="col col-form-label" for="fee">Komisyon: </label>
+			<div class="col-sm input-group">
 				<span class="input-group-text">%</span>
 				<input class="form-control" type="number" name="fee"><br>
 			</div>
 		</div>
 
-		<div>
-			<label class="form-label" for="shipping">Kargo (KDV Dahil): </label>
-			<div class="input-group mb-3">
+		<div class="row mb-3">
+			<label class="col col-form-label" for="shipping">Kargo (KDV Dahil): </label>
+			<div class="col-sm input-group">
 				<input class="form-control" type="number" name="shipping" value="21.50"><br>
 				<span class="input-group-text">₺</span>
 			</div>
 		</div>
 
-		<div>
-			<label class="form-label" for="cost">Geliş: </label>
-			<div class="input-group mb-3">
+		<div class="row mb-3">
+			<label class="col col-form-label" for="cost">Geliş: </label>
+			<div class="col-sm input-group">
 				<input class="form-control" type="number" name="cost">
 				<span class="input-group-text">₺</span>
 			</div>
 		</div>
 
-		<div>
-			<label class="form-label" for="price">Satış: </label>
-			<div class="input-group mb-3">
+		<div class="row mb-3">
+			<label class="col col-form-label" for="price">Satış: </label>
+			<div class="col-sm input-group">
 				<input class="form-control" type="number" name="price">
 				<span class="input-group-text">₺</span>
 			</div>
 		</div>
 
-		<div>
+		<div class="row mb-3">
 			<h5>KAR</h5>
-			<div class="input-group mb-1">
+			<div class="col-sm input-group mb-1">
 				<input class="form-control" type="number" name="profit" value=""
 					jAutoCalc="((1-{fee}/100)*{price}-(1+{vat}/100)*{cost}-{shipping})/(1+{vat}/100)" disabled>
 				<span class="input-group-text">₺</span>
 			</div>
-			<div class="input-group mb-1">
+			<div class="col-sm input-group mb-1">
 				<span class="input-group-text">%</span>
 				<input class="form-control" type="number" name="percent" value="" jAutoCalc="{profit}/{price}*100"
 					disabled>
