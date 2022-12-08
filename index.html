@@ -85,14 +85,14 @@
     </thead>
     <tbody id="offers">
       <!--
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td><a class="delete" title="Kaldır" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></td>
-                  </tr>
-                  -->
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td><a class="delete" title="Kaldır" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></td>
+            </tr>
+            -->
     </tbody>
 
     <script>
@@ -105,10 +105,11 @@
         let tableBody = document.getElementById("offers");
         let header = document.createElement("th");
         header.setAttribute('scope', 'row');
-        if (tableBody.rows.length === 0) {
+        if (tableBody.rows.length == 0) {
           header.innerHTML = 1;
-        } else {
-          header.innerHTML = parseInt(tableBody.rows.item(tableBody.rows.length-1).querySelector('th').innerHTML) + 1;
+        }
+        else {
+        header.innerHTML = parseInt(tableBody.rows.item(tableBody.rows.length-1).querySelector('th').innerHTML) + 1;
         }
         let row = tableBody.insertRow();
         row.appendChild(header);
@@ -121,9 +122,6 @@
         a.parentElement.parentElement.remove()
       }
     </script>
-    <p id="test">
-      test
-    </p>
   </body>
 
 </html>
