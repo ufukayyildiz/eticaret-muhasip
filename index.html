@@ -2,73 +2,128 @@
 <html lang="tr">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jautocalc@1.4.2/dist/jautocalc.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jautocalc@1.4.2/dist/jautocalc.js"></script>
 </head>
 
-<body>
-	<form class="p-3 mx-auto" style="max-width: max-content">
+<body style="max-width: max-content" class="mx-auto p-3">
+  <form>
 
-		<div class="row mb-3">
-			<label class="col col-form-label" for="vat">KDV: </label>
-			<div class="col-sm input-group">
-				<span class="input-group-text">%</span>
-				<input class="form-control" type="number" name="vat" value="12"><br>
-			</div>
-		</div>
+    <div class="row mb-3">
+      <label class="col col-form-label" for="vat">KDV: </label>
+      <div class="col-sm input-group">
+        <span class="input-group-text">%</span>
+        <input class="form-control" type="number" name="vat" id="vat" value="12"><br>
+      </div>
+    </div>
 
-		<div class="row mb-3">
-			<label class="col col-form-label" for="fee">Komisyon: </label>
-			<div class="col-sm input-group">
-				<span class="input-group-text">%</span>
-				<input class="form-control" type="number" name="fee"><br>
-			</div>
-		</div>
+    <div class="row mb-3">
+      <label class="col col-form-label" for="fee">Komisyon: </label>
+      <div class="col-sm input-group">
+        <span class="input-group-text">%</span>
+        <input class="form-control" type="number" name="fee" id="fee"><br>
+      </div>
+    </div>
 
-		<div class="row mb-3">
-			<label class="col col-form-label" for="shipping">Kargo (KDV Dahil): </label>
-			<div class="col-sm input-group">
-				<input class="form-control" type="number" name="shipping" value="21.50"><br>
-				<span class="input-group-text">₺</span>
-			</div>
-		</div>
+    <div class="row mb-3">
+      <label class="col col-form-label" for="shipping">Kargo (KDV Dahil): </label>
+      <div class="col-sm input-group">
+        <input class="form-control" type="number" name="shipping" id="shipping" value="21.50"><br>
+        <span class="input-group-text">₺</span>
+      </div>
+    </div>
 
-		<div class="row mb-3">
-			<label class="col col-form-label" for="cost">Geliş: </label>
-			<div class="col-sm input-group">
-				<input class="form-control" type="number" name="cost">
-				<span class="input-group-text">₺</span>
-			</div>
-		</div>
+    <div class="row mb-3">
+      <label class="col col-form-label" for="cost">Geliş: </label>
+      <div class="col-sm input-group">
+        <input class="form-control" type="number" name="cost" id="cost">
+        <span class="input-group-text">₺</span>
+      </div>
+    </div>
 
-		<div class="row mb-3">
-			<label class="col col-form-label" for="price">Satış: </label>
-			<div class="col-sm input-group">
-				<input class="form-control" type="number" name="price">
-				<span class="input-group-text">₺</span>
-			</div>
-		</div>
+    <div class="row mb-3">
+      <label class="col col-form-label" for="price">Satış: </label>
+      <div class="col-sm input-group">
+        <input class="form-control" type="number" name="price" id="price">
+        <span class="input-group-text">₺</span>
+      </div>
+    </div>
 
-		<div class="row mb-3">
-			<h5>KAR</h5>
-			<div class="col-sm input-group mb-1">
-				<input class="form-control" type="number" name="profit" value=""
-					jAutoCalc="((1-{fee}/100)*{price}-(1+{vat}/100)*{cost}-{shipping})/(1+{vat}/100)" disabled>
-				<span class="input-group-text">₺</span>
-			</div>
-			<div class="col-sm input-group mb-1">
-				<span class="input-group-text">%</span>
-				<input class="form-control" type="number" name="percent" value="" jAutoCalc="{profit}/{price}*100"
-					disabled>
-			</div>
-		</div>
+    <div class="row mb-3">
+      <h5>KAR</h5>
+      <div class="col-sm input-group">
+        <input class="form-control" type="number" name="profit" id="profit" value=""
+        jAutoCalc="((1-{fee}/100)*{price}-(1+{vat}/100)*{cost}-{shipping})/(1+{vat}/100)" disabled>
+        <span class="input-group-text">₺</span>
+      </div>
+      <div class="col-sm input-group">
+        <span class="input-group-text">%</span>
+        <input class="form-control" type="number" name="percent" id="percent" value="" jAutoCalc="{profit}/{price}*100"
+        disabled>
+      </div>
+    </div>
 
-	</form>
-	<script>$('form').jAutoCalc({ keyEventsFire: true, decimalPlaces: 2, emptyAsZero: true });</script>
-</body>
+    <div class="row mb-3">
+      <button class="btn btn-primary col-sm" type="button" onclick="addToTable()">Kaydet</button>
+    </div>
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Komisyon</th>
+        <th scope="col">Satış</th>
+        <th scope="col">Kar (%)</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody id="offers">
+      <!--
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td><a class="delete" title="Kaldır" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></td>
+                  </tr>
+                  -->
+    </tbody>
+
+    <script>
+      $('form').jAutoCalc({
+        keyEventsFire: true, decimalPlaces: 2, emptyAsZero: true
+      });
+    </script>
+    <script>
+      function addToTable() {
+        let tableBody = document.getElementById("offers");
+        let header = document.createElement("th");
+        header.setAttribute('scope', 'row');
+        if (tableBody.rows.length === 0) {
+          header.innerHTML = 1;
+        } else {
+          header.innerHTML = parseInt(tableBody.rows.item(tableBody.rows.length-1).querySelector('th').innerHTML) + 1;
+        }
+        let row = tableBody.insertRow();
+        row.appendChild(header);
+        row.insertCell().innerHTML = document.getElementById("fee").value;
+        row.insertCell().innerHTML = document.getElementById("price").value;
+        row.insertCell().innerHTML = document.getElementById("percent").value;
+        row.insertCell().innerHTML = '<a class="delete" title="Kaldır" data-toggle="tooltip" onclick=removeRow(this)><i class="material-icons">&#xE872;</i></a>';
+      }
+      function removeRow(a) {
+        a.parentElement.parentElement.remove()
+      }
+    </script>
+    <p id="test">
+      test
+    </p>
+  </body>
 
 </html>
