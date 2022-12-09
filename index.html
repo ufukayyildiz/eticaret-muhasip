@@ -85,14 +85,14 @@
     </thead>
     <tbody id="offers">
       <!--
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td><a class="delete" title="Kaldır" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></td>
-            </tr>
-            -->
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td><a class="delete" title="Kaldır" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></td>
+                  </tr>
+                  -->
     </tbody>
 
     <script>
@@ -107,9 +107,8 @@
         header.setAttribute('scope', 'row');
         if (tableBody.rows.length == 0) {
           header.innerHTML = 1;
-        }
-        else {
-        header.innerHTML = parseInt(tableBody.rows.item(tableBody.rows.length-1).querySelector('th').innerHTML) + 1;
+        } else {
+          header.innerHTML = parseInt(tableBody.rows.item(tableBody.rows.length-1).querySelector('th').innerHTML) + 1;
         }
         let row = tableBody.insertRow();
         row.appendChild(header);
@@ -119,7 +118,14 @@
         row.insertCell().innerHTML = '<a class="delete" title="Kaldır" data-toggle="tooltip" onclick=removeRow(this)><i class="material-icons">&#xE872;</i></a>';
       }
       function removeRow(a) {
-        a.parentElement.parentElement.remove()
+        a.parentElement.parentElement.remove();
+        refreshTable();
+      }
+      function refreshTable() {
+        let rows = document.getElementById("offers").rows;
+        for (let i = 0; i < rows.length; i++) {
+          rows[i].querySelector('th').innerHTML = i + 1;
+        }
       }
     </script>
   </body>
