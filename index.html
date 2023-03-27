@@ -15,9 +15,9 @@
   <form>
   
     <div class="row mb-3">
-      <label class="col col-form-label" for="service">Hizmet+İşlem Bedeli (KDV Dahil): </label>
+      <label class="col col-form-label" for="service">Hizmet+İşlem Bedeli: </label>
       <div class="col-sm input-group">
-        <input class="form-control" type="number" name="service" id="service" value="3.55"><br>
+        <input class="form-control" type="number" name="service" id="service" value="3.00"><br>
         <span class="input-group-text">₺</span>
       </div>
     </div>
@@ -26,7 +26,7 @@
       <label class="col col-form-label" for="vat">KDV: </label>
       <div class="col-sm input-group">
         <span class="input-group-text">%</span>
-        <input class="form-control" type="number" name="vat" id="vat" value="12"><br>
+        <input class="form-control" type="number" name="vat" id="vat" value="18"><br>
       </div>
     </div>
 
@@ -39,9 +39,9 @@
     </div>
 
     <div class="row mb-3">
-      <label class="col col-form-label" for="shipping">Kargo (KDV Dahil): </label>
+      <label class="col col-form-label" for="shipping">Kargo: </label>
       <div class="col-sm input-group">
-        <input class="form-control" type="number" name="shipping" id="shipping" value="25.50"><br>
+        <input class="form-control" type="number" name="shipping" id="shipping" value="21.60"><br>
         <span class="input-group-text">₺</span>
       </div>
     </div>
@@ -66,7 +66,7 @@
       <h5>KAR</h5>
       <div class="col-sm input-group">
         <input class="form-control" type="number" name="profit" id="profit" value=""
-        jAutoCalc="((1-{fee}/100)*{price}-(1+{vat}/100)*{cost}-{shipping}-{service})/(1+{vat}/100)" disabled>
+        jAutoCalc="{price}*(0.8475-{fee}/100)-{cost}-{shipping}-{service}" disabled>
         <span class="input-group-text">₺</span>
       </div>
       <div class="col-sm input-group">
