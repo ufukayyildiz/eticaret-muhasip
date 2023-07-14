@@ -15,7 +15,7 @@
 </head>
 
 <body style="max-width: max-content" class="mx-auto p-3">
-  <form>
+  <form id="calculator">
 
     <div class="row mb-3">
       <label class="col col-form-label" for="service">Hizmet+İşlem Bedeli: </label>
@@ -42,10 +42,21 @@
     </div>
 
     <div class="row mb-3">
-      <label class="col col-form-label" for="shipping">Kargo: </label>
-      <div class="col-sm input-group">
-        <input class="form-control" type="number" name="shipping" id="shipping" value="29"><br>
-        <span class="input-group-text">₺</span>
+      <div class="form-group">
+        <label for="dropdown">Kargo firması:</label>
+        <select class="form-control" id="dropdown" onchange="updateValue()">
+          <option value="a">Aras</option>
+          <option value="s" selected>Sürat</option>
+          <option value="y">Yurtiçi</option>
+          <option value="custom">Özel</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="col col-form-label" for="shipping">Kargo: </label>
+        <div class="col-sm input-group">
+          <input class="form-control" type="number" name="shipping" id="shipping" value="29" readonly><br>
+          <span class="input-group-text">₺</span>
+        </div>
       </div>
     </div>
 
@@ -60,7 +71,7 @@
     <div class="row mb-3">
       <label class="col col-form-label" for="price">Satış: </label>
       <div class="col-sm input-group">
-        <input class="form-control" type="number" name="price" id="price">
+        <input class="form-control" type="number" name="price" id="price" oninput="updateValue()">
         <span class="input-group-text">₺</span>
       </div>
     </div>
@@ -107,7 +118,7 @@
     </tbody>
 
     <script>
-      $('form').jAutoCalc({
+      $('form#calculator').jAutoCalc({
         keyEventsFire: true, decimalPlaces: 2, emptyAsZero: true
       });
     </script>
@@ -137,6 +148,49 @@
         for (let i = 0; i < rows.length; i++) {
           rows[i].querySelector('th').innerHTML = i + 1;
         }
+      }
+    </script>
+    <script>
+      function updateValue() {
+        var selectedValue = document.getElementById("dropdown").value;
+        var shipping = document.getElementById("shipping");
+        var priceValue = document.getElementById("price").value;
+
+        if (selectedValue === "a") {
+          if (priceValue < 60)
+            shipping.value = 15.67
+          else if (priceValue < 100)
+            shipping.value = 27.11
+          else
+            shipping.value = 29.02;
+        }
+        if (selectedValue === "s") {
+          if (priceValue < 60)
+            shipping.value = 15.67
+          else if (priceValue < 100)
+            shipping.value = 27.11
+          else
+            shipping.value = 28.59;
+        }
+        if (selectedValue === "y") {
+          if (priceValue < 60)
+            shipping.value = 25.84
+          else if (priceValue < 100)
+            shipping.value = 37.28
+          else
+            shipping.value = 39.50;
+        }
+        if (selectedValue === "custom") {
+          shipping.value = 0;
+          shipping.removeAttribute("readonly");
+        } else {
+          shipping.setAttribute("readonly", true);
+        }
+
+        $('form#calculator').jAutoCalc('destroy');
+        $('form#calculator').jAutoCalc({
+          keyEventsFire: true, decimalPlaces: 2, emptyAsZero: true
+        });
       }
     </script>
 </body>
