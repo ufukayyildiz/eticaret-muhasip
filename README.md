@@ -1,8 +1,22 @@
 # E-ticaret Muhasip (Kaça Satsam?)
 
-- <https://frknltrk.github.io/eticaret-muhasip>
+## Temel Dokümantasyon
 
-## Pazaryeri Komisyon Oranları
+### Nedir?
+
+Ürünlere fiyat belirlemekte başta babama :) sonra da diğer bütün satıcılara kolaylık sağlaması için geliştirdiğim bir dijital hesap makinesidir.
+
+### Nerede?
+
+Çevrimiçi uygulamaya (programa) buradan erişebilirsiniz: <https://frknltrk.github.io/eticaret-muhasip>
+
+### Özellikler
+
+- Otomatik kargo ücreti hesaplaması: Bunu şu an için yalnızca en güncel Trendyol tarifesini baz alarak yapmakta. Ücreti kendiniz vermek istiyorsanız _Kargo firması: ÖZEL_ seçiniz.
+
+### Diğer Kaynaklar
+
+#### Pazaryeri Komisyon Oranları
 
 - Amazon
 - Trendyol
@@ -10,26 +24,35 @@
 - [n11](https://magazadestek.n11.com/s/komisyon-oranlari)
 - Çiçek Sepeti
 
-## Anlaşmalı Kargo Ücretleri
+#### Anlaşmalı Kargo Ücretleri
 
 - [Trendyol](https://tymp.mncdn.com/prod/documents/engagement/kargo/guncel_kargo_fiyatlari.pdf)
 - [n11](https://www.n11.com/kampanyalar/ozel-kargo-kampanyasi)
 
-## Kaynaklar
+## Teknik Dokümantasyon
 
-- <https://github.com/c17r/jAutoCalc>
-- <https://www.jqueryscript.net/form/Do-Calculations-Form-Fields-AutoCalc.html>
+### Kullanılan Teknolojiler (Diller, Kütüphaneler, Modüller ...)
 
-## YAPILACAKLAR
+- HTML & JS
+- [Bootstrap](https://getbootstrap.com)
+- [jAutoCalc](https://github.com/c17r/jAutoCalc)
+- [Trendyol Public API (Unofficial)](https://github.com/frknltrk/trendyol_public_api)
 
-- [ ] kullanıcının, *komisyon* ve *kargo* ücretlerini elle girmesi yerine seçeceği pazar yerine göre **program** kendisi çekip hesaplamaya dahil etsin.
-- [ ] pazar yeri seçmek için açılır menü
-- [ ] mobil dostu güzel bir arayüzü
-- [x] barem uygulaması: <https://akademi.trendyol.com/satici-bilgi-merkezi/detay/109>
-- [ ] tam kapsamlı otomatik kargo ücreti hesaplaması (firma,desi,barem)
+### Nasıl Çalışır?
 
-## KAYNAKÇA
+...
+
+### Yapılcaklar
+
+- [x] mobil dostu güzel bir arayüzü
+- [x] otomatik kargo hesaplaması (firma, desi)
+- [ ] barem uygulaması (pazaryeri, desi, satış, firma)
+- [ ] otomatik komisyon hesaplaması (pazaryeri, kategori)
+- [ ] reformat the html code
+
+### Yararlı Kaynaklar
 
 - <https://getbootstrap.com/docs/5.2/getting-started/introduction/>
 - <https://getbootstrap.com/docs/5.2/forms>
 - <https://getbootstrap.com/docs/5.2/utilities/sizing/>
+- <https://www.jqueryscript.net/form/Do-Calculations-Form-Fields-AutoCalc.html>
