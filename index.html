@@ -45,11 +45,23 @@
       <div class="form-group">
         <label for="dropdown">Kargo firması:</label>
         <select class="form-control" id="dropdown" onchange="updateValue()">
-          <option value="a">Aras</option>
-          <option value="s" selected>Sürat</option>
-          <option value="y">Yurtiçi</option>
-          <option value="custom">Özel</option>
+          <option value="aras">Aras Kargo</option>
+          <option value="surat" selected>Sürat Kargo</option>
+          <option value="mng">MNG Kargo</option>
+          <option value="ptt">PTT Kargo</option>
+          <option value="yurtici">Yurtiçi Kargo</option>
+          <option value="sendeo">Sendeo</option>
+          <option value="tex">TEX</option>
+          <option value="ups">UPS</option>
+          <option value="borusan">Borusan</option>
+          <option value="ceva">CEVA</option>
+          <option value="horoz">Horoz Lojistik</option>
+          <option value="custom">ÖZEL</option>
         </select>
+      </div>
+      <div class="form-group" id="desiGroup">
+        <label for="desi">Desi:</label>
+        <input class="form-control" type="number" name="desi" id="desi" value="1" onchange="updateValue()">
       </div>
       <div class="form-group">
         <label class="col col-form-label" for="shipping">Kargo: </label>
@@ -151,40 +163,44 @@
       }
     </script>
     <script>
-      function updateValue() {
+      // Flag variable to keep track of whether data has been fetched
+      let isDataFetched = false;
+      let shippingCosts;
+
+      async function fetchShippingCosts() {
+        try {
+          const response = await fetch('https://frknltrk.github.io/trendyol_public_api/shipping_costs.json');
+          const data = await response.json();
+          shippingCosts = data;
+          isDataFetched = true;
+        } catch (error) {
+          console.error('Error fetching shipping costs:', error);
+        }
+      }
+
+      async function updateValue() {
+        // Check if data has been fetched, and fetch it if not
+        if (!isDataFetched) {
+          await fetchShippingCosts();
+        }
+
         var selectedValue = document.getElementById("dropdown").value;
         var shipping = document.getElementById("shipping");
         var priceValue = document.getElementById("price").value;
+        var desiValue = document.getElementById("desi").value;
 
-        if (selectedValue === "a") {
-          if (priceValue < 60)
-            shipping.value = 15.67
-          else if (priceValue < 100)
-            shipping.value = 27.11
-          else
-            shipping.value = 29.02;
-        }
-        if (selectedValue === "s") {
-          if (priceValue < 60)
-            shipping.value = 15.67
-          else if (priceValue < 100)
-            shipping.value = 27.11
-          else
-            shipping.value = 28.59;
-        }
-        if (selectedValue === "y") {
-          if (priceValue < 60)
-            shipping.value = 25.84
-          else if (priceValue < 100)
-            shipping.value = 37.28
-          else
-            shipping.value = 39.50;
-        }
+        // Find the matching shipping cost for the selected shipping company and desi value
+        var selectedShippingCost = shippingCosts[desiValue][selectedValue];
+        // Update the shipping input field with the calculated shipping cost
+        shipping.value = selectedShippingCost;
+
         if (selectedValue === "custom") {
           shipping.value = 0;
           shipping.removeAttribute("readonly");
+          document.getElementById("desiGroup").style.display = "none";
         } else {
           shipping.setAttribute("readonly", true);
+          document.getElementById("desiGroup").style.display = "block";
         }
 
         $('form#calculator').jAutoCalc('destroy');
@@ -192,6 +208,9 @@
           keyEventsFire: true, decimalPlaces: 2, emptyAsZero: true
         });
       }
+
+      // Call the fetchShippingCosts function once when the page loads
+      fetchShippingCosts();
     </script>
 </body>
 
