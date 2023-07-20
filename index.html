@@ -20,7 +20,7 @@
     <div class="row mb-3">
       <label class="col col-form-label" for="service">Hizmet+İşlem Bedeli: </label>
       <div class="col-sm input-group">
-        <input class="form-control" type="number" name="service" id="service" value="3.00"><br>
+        <input class="form-control" type="number" name="service" id="service" min="0" step="0.01" value="3">
         <span class="input-group-text">₺</span>
       </div>
     </div>
@@ -29,7 +29,7 @@
       <label class="col col-form-label" for="vatP">KDV: </label>
       <div class="col-sm input-group">
         <span class="input-group-text">%</span>
-        <input class="form-control" type="number" name="vatP" id="vatP" value="20"><br>
+        <input class="form-control" type="number" name="vatP" id="vatP" min="0" value="20">
       </div>
     </div>
 
@@ -37,7 +37,7 @@
       <label class="col col-form-label" for="feeP">Komisyon: </label>
       <div class="col-sm input-group">
         <span class="input-group-text">%</span>
-        <input class="form-control" type="number" name="feeP" id="feeP"><br>
+        <input class="form-control" type="number" name="feeP" id="feeP" min="0" step="0.5">
       </div>
     </div>
 
@@ -61,12 +61,12 @@
       </div>
       <div class="form-group" id="desiGroup">
         <label for="desi">Desi:</label>
-        <input class="form-control" type="number" name="desi" id="desi" value="1" onchange="updateValue()">
+        <input class="form-control" type="number" name="desi" id="desi" min="0" value="1" onchange="updateValue()">
       </div>
       <div class="form-group">
         <label class="col col-form-label" for="shipping">Kargo: </label>
         <div class="col-sm input-group">
-          <input class="form-control" type="number" name="shipping" id="shipping" readonly><br>
+          <input class="form-control" type="number" name="shipping" id="shipping" min="0" readonly>
           <span class="input-group-text">₺</span>
         </div>
       </div>
@@ -75,7 +75,7 @@
     <div class="row mb-3">
       <label class="col col-form-label" for="cost">Geliş: </label>
       <div class="col-sm input-group">
-        <input class="form-control" type="number" name="cost" id="cost">
+        <input class="form-control" type="number" name="cost" id="cost" min="0">
         <span class="input-group-text">₺</span>
       </div>
     </div>
@@ -83,7 +83,7 @@
     <div class="row mb-3">
       <label class="col col-form-label" for="price">Satış: </label>
       <div class="col-sm input-group">
-        <input class="form-control" type="number" name="price" id="price" oninput="updateValue()">
+        <input class="form-control" type="number" name="price" id="price" min="0" oninput="updateValue()">
         <span class="input-group-text">₺</span>
       </div>
     </div>
