@@ -66,7 +66,7 @@
       <div class="form-group">
         <label class="col col-form-label" for="shipping">Kargo: </label>
         <div class="col-sm input-group">
-          <input class="form-control" type="number" name="shipping" id="shipping" value="29" readonly><br>
+          <input class="form-control" type="number" name="shipping" id="shipping" readonly><br>
           <span class="input-group-text">₺</span>
         </div>
       </div>
@@ -128,11 +128,15 @@
                   </tr>
                   -->
     </tbody>
-
     <script>
-      $('form#calculator').jAutoCalc({
-        keyEventsFire: true, decimalPlaces: 2, emptyAsZero: true
-      });
+      function autoCalcSetup() {
+        $('form#calculator').jAutoCalc('destroy');
+        $('form#calculator').jAutoCalc({
+          keyEventsFire: true, decimalPlaces: 2, emptyAsZero: true
+        });
+      }
+      // Call it once when the page loads
+      autoCalcSetup();
     </script>
     <script>
       function addToTable() {
@@ -202,15 +206,12 @@
           shipping.setAttribute("readonly", true);
           document.getElementById("desiGroup").style.display = "block";
         }
-
-        $('form#calculator').jAutoCalc('destroy');
-        $('form#calculator').jAutoCalc({
-          keyEventsFire: true, decimalPlaces: 2, emptyAsZero: true
-        });
+        autoCalcSetup();
       }
 
-      // Call the fetchShippingCosts function once when the page loads
+      // Call the fetchShippingCosts & updateValue functions once when the page loads
       fetchShippingCosts();
+      updateValue();
     </script>
 </body>
 
