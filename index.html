@@ -195,8 +195,8 @@
 
         // Find the matching shipping cost for the selected shipping company and desi value
         var selectedShippingCost = shippingCosts[desiValue][selectedValue];
-        // Replace comma with dot & convert type to float
-        selectedShippingCost = parseFloat(selectedShippingCost.replace(',', '.'));
+        // Replace comma with dot as decimal sign & convert type to float
+        selectedShippingCost = parseFloat(String(selectedShippingCost).replace(',', '.'));
         // Update the shipping input field with the calculated shipping cost
         shipping.value = selectedShippingCost;
 
