@@ -64,7 +64,7 @@
         <input class="form-control" type="number" name="desi" id="desi" min="0" value="1" onchange="updateValue()">
       </div>
       <div class="form-group">
-        <label class="col col-form-label" for="shipping">Kargo: </label>
+        <label class="col col-form-label" for="shipping">Kargo (<span id="last_changed"></span>):</label>
         <div class="col-sm input-group">
           <input class="form-control" type="number" name="shipping" id="shipping" min="0" readonly>
           <span class="input-group-text">₺</span>
@@ -177,6 +177,7 @@
           const data = await response.json();
           shippingCosts = data;
           isDataFetched = true;
+          document.getElementById("last_changed").innerText = shippingCosts['last_changed'];
         } catch (error) {
           console.error('Error fetching shipping costs:', error);
         }
