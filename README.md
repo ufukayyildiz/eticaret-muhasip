@@ -8,7 +8,7 @@
 
 ### Nerede?
 
-Çevrimiçi uygulamaya (programa) buradan erişebilirsiniz: <https://frknltrk.github.io/eticaret-muhasip>
+Çevrimiçi uygulamaya (programa) buradan erişebilirsiniz: <https://futurk.github.io/eticaret-muhasip>
 
 ### Özellikler
 
