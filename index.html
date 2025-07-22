@@ -45,6 +45,7 @@
       <div class="form-group">
         <label for="dropdown">Kargo firması:</label>
         <select class="form-control" id="dropdown" onchange="updateValue()">
+              <option value="ups">UPS</option>
           <option value="aras">Aras Kargo</option>
           <option value="surat" selected>Sürat Kargo</option>
           <option value="mng">MNG Kargo</option>
@@ -52,10 +53,10 @@
           <option value="yurtici">Yurtiçi Kargo</option>
           <option value="sendeo">Sendeo</option>
           <option value="tex">TEX</option>
-          <option value="ups">UPS</option>
-          <option value="borusan">Borusan</option>
-          <option value="ceva">CEVA</option>
-          <option value="horoz">Horoz Lojistik</option>
+      
+
+
+    
           <option value="custom">ÖZEL</option>
         </select>
       </div>
@@ -73,7 +74,7 @@
     </div>
 
     <div class="row mb-3">
-      <label class="col col-form-label" for="cost">Geliş: </label>
+      <label class="col col-form-label" for="cost">Alım Maliyeti: </label>
       <div class="col-sm input-group">
         <input class="form-control" type="number" name="cost" id="cost" min="0">
         <span class="input-group-text">₺</span>
@@ -81,7 +82,7 @@
     </div>
 
     <div class="row mb-3">
-      <label class="col col-form-label" for="price">Satış: </label>
+      <label class="col col-form-label" for="price">Satış Fiyatı: </label>
       <div class="col-sm input-group">
         <input class="form-control" type="number" name="price" id="price" min="0">
         <span class="input-group-text">₺</span>
